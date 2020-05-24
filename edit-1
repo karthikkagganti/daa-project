@@ -1,0 +1,281 @@
+#include<stdio.h>
+//#include<stdlib.h>
+
+void home();
+void Login();
+void Regis();
+void cinema();
+void print(int arr[int o]);
+void receipt(int arr[int o]);
+
+
+
+int Mobi[15],Passi[15];
+int i,k,R=0;
+//int screenuno[5][5] ;
+int screenuno[25];
+char Email[15];
+int booking[100];
+
+/*struct block
+{
+	int Pin;
+	int Mob;
+	char Email[50];
+};*/
+
+/*int Login()
+{
+	int i,flag=0;
+	printf("Enter the Mobile number  : ");
+	scanf("%d",&Mob);
+
+	printf("Enter Password : ");
+	scanf("%d",&Pin);
+
+	for(i=0;i<10;i++)
+	{
+		if(Mob==Mobi[i] && Pin==passi[i])
+		int Mobi[10],passi[15] ;
+	}*/
+	
+void home()
+    {
+        int hchoice;
+        printf("Hey!\n Enter 1 to login\n Enter 2 if you are a new customer\n");
+        scanf("%d",&hchoice);
+        switch(hchoice)
+        {
+            case 1: Login();
+                    break;
+            case 2: Regis();
+                    break;
+            default: printf("Enter a vaild choice");
+                    break;    
+        }
+    }
+
+void Login()  //This is the login screen, allows user to login 
+	{
+		int j,flag=0,Mob=0,Pin=0;
+		printf("\nEnter the Mobile number  : ");
+		scanf("%d",&Mob);
+		printf("\nEnter Password : ");
+		scanf("%d",&Pin);
+		for(j=0;j<i;j++)					
+		{
+			if(Mob==Mobi[j] && Pin==Passi[j])
+			{
+				flag=1;
+			}
+		}
+		if(flag==1)
+		{
+			printf("\n Successfully Logged in");
+            cinema();
+		}
+		else
+		{
+			for(int l=0;l<3;l++)
+			{
+			   if(l==3)
+			   {
+			       printf("You have entered the wrong password several times, please try again");
+			       void home();
+			   }
+			   else
+			   {
+			       printf("Wrong password, please try again");
+                   void Login(); 
+			   }
+			}
+			
+		}
+	}
+
+void Regis()			//Registration Screen
+	{
+		int Con=0,flag=0;
+		
+		printf("\n Enter your mobile number :");
+		scanf("%d",&Mobi[i]);
+		
+		//printf("\n Enter your E-mail ID : ");
+		//scanf("%s",Email[i]);
+		
+		printf("\n Enter Pin : ");
+		scanf("%d",&Passi[i]);
+		printf("\n Confirm pin : ");
+		scanf("%d",&Con);
+       
+		if(Passi[i]==Con)
+        {
+            flag=1;  
+        }
+		if(flag==1)
+		{
+			i++;
+			printf("\n Successfully registered");
+			Login() ;
+		}
+
+		else	
+		{
+			printf("\n Passwords did not match ") ;
+			Regis() ;
+		}
+
+	}
+
+void cinema()
+   {
+        int seats;	// timez
+        int choice,day ;
+	    int cRow[10],cCol[10] ;
+        //int R=0;//C=0;
+        printf("\n==========================") ;
+        printf("\nWelcome to DINOX, home of cinema ") ;
+        printf("\nWhat movie would you like to view ?") ;
+        printf("\nShaktiman 16 : Enter 1 to view\nChristianbails: Enter 2 to view\nDog of Wall street: Enter 3 to view\nMandalorian: Enter 4 to view\nPerry The Platypus: ") ;
+        scanf("%d",&choice) ;
+	    /*screenuno = [1,1,1,1,1
+				 1,1,1,1,1
+				 1,1,1,1,1
+				 1,1,1,1,1
+				 1,1,1,1,1] ;
+				
+	    screendos = [1,1,0,0,0
+				 1,0,0,1,1
+				 1,1,1,0,0
+				 1,0,0,0,1
+				 1,1,1,1,1] ;
+   
+        screentres = [0,0,0,0,1
+				 1,1,1,0,0
+				 0,0,1,1,1
+				 1,1,0,0,0
+				 1,0,0,1,1] ;
+	        */
+        switch(choice)
+           {
+                    case 1 : 	printf("\n Screen for Shaktiman : 1 is free seat, 0 is filled seat") ;
+					            printf("\n Row 1 : 1  2  3  4  5 \n Row 2 : 6  7  8  9  10 \n Row 3 : 11  12  13  14  15 \n Row 4 : 16  17  18  19  20 \n Row 5 : 21  22  23  24  25 ") ;
+					            print(screenuno[25]);
+					            printf("\n How many seats would you like to book?  (Among the available seats") ;
+					            scanf("%d", &seats) ;
+					            //printf("\n Enter the seat(s) you would like to book : ") ;
+					            for(k=0;k<seats;k++)
+					               {
+						                 /*printf("\n Enter the row number for the %d seat : ",k+1) ;
+						                scanf("%d",&R) ;
+					    	            printf("\n Enter the col number for the %d seat : ",k+1) ;
+						                scanf("%d",&C) ;*/
+					    	            //Check if seat is taken or not
+					     	            //R=cRow[k];
+					    	            //C=cCol[k];
+					    	            /*if(screenuno[R][C] == 1)
+						                        {
+						                            printf("\n Seat is already taken ") ;
+					    	                     }
+								 
+						                if(screenuno[R][C] == 0)
+						                        {
+						                             printf("\n Seat has been booked by you") ;
+						                            screenuno[R][C]=1;
+					        	                }*/
+					                    printf("Enter the seat number for the %d seat",k+1);
+					                    scanf("%d",&R);
+					                    if(screenuno[R-1]==0)
+					                        {
+					                             printf("Sorry this seat has been taken, please select from the list of available seats\n");
+					                             //booking(seats);
+					                        }
+					                    else
+					                        {
+					                              printf("Your seat has been booked");
+					                              push(
+									receipt(screenuno[25]);
+					                              return 1;
+					                         }
+				                    }
+				                    break;
+					
+		/*case 2 :	printf("\n Screen for ChritianBails : 1 is free seat, 0 is filled seat") ;
+					printf("\n Row 1 : 1,1,0,0,0 \n Row 2 : 1,0,0,1,1 \n Row 3 : 1,1,1,0,0 \n Row 4 : 1,0,0,0,1 \n Row 5 : 1,1,1,1,1 ") ;	
+					printf("\n How many seats would you like to book?  (Among the available 25 seats") ;
+					scanf("%d", &seats) ;
+					printf("\n Enter the seat(s) you would like to book : ") ;
+					for(k=0;k<seats;k++)
+					{
+						printf("\n Enter the row number for the %d seat : ",k) ;
+						scanf("%d",&cRow[k]) ;
+						print("\n Enter the col number for the %d seat : ",k) ;
+						scanf("%d",&cCol[k]) ;
+						//Check if seat is taken or not
+								 
+						if(screendos[cRow[k]][cCol[k]] == 1)
+						{
+							printf("\n Seat is already taken ") ;
+						}
+								 
+						if(screen1[cRow[k]][cCol[k]] == 0)
+						{
+						printf("\n Seat has been booked by you") ;
+						}
+					}
+		case 3 : 
+					printf("\n Screen for Dog of Wall Street : 1 is free seat, 0 is filled seat") ;
+					printf("\n Row 1 : 1,1,1,1,1 \n Row 2 : 1,1,1,1,1 \n Row 3 : 1,1,1,1,1 \n Row 4 : 1,1,1,1,1 \n Row 5 : 1,1,1,1,1 ") ;
+					printf("\n How many seats would you like to book?  (Among the available 25 seats") ;
+					scanf("%d", &seats) ;
+					printf("\n Enter the seat(s) you would like to book : ") ;
+					for(k=0;k<seats;k++)
+					{
+						printf("\n Enter the row number for the %d seat : ",k) ;
+						scanf("%d",&cRow[k]) ;
+						print("\n Enter the col number for the %d seat : ",k) ;
+						scanf("%d",&cCol[k]) ;
+						//Check if seat is taken or not
+								 
+						if(screen1[cRow[k]][cCol[k]] == 1)
+						{
+							printf("\n Seat is already taken ") ;
+						}
+								 
+						if(screen1[cRow[k]][cCol[k]] == 0)
+						{
+						printf("\n Seat has been booked by you") ;
+						}
+					}
+					*/
+	        }
+    }
+
+
+void print(int arr[])
+{
+    printf("\n");
+    for(int y=0; y<25 ;y++)
+    {
+      if(arr[y]==1)
+      {
+          printf("%d\t",y+1);
+      }
+    }
+}
+
+void receipt(int arr[])
+{
+    int rchoice;	
+    printf("Enter 1 to confirm seats\n Enter 2 to discard booking "); 
+    scanf("%d",&rchoice);
+    switch(rchoice)
+	{
+		case 1: printf("please make your payment at DINOX atleast 90 mins brfore");
+			break;
+		case 2:  	
+}
+void main()
+{
+    home();
+}
